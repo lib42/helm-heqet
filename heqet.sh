@@ -41,7 +41,7 @@ HEQET_TMPDIR="${HEQET_TMPDIR:-${HEQET_DATADIR}/$(basename $PWD)}"
 
 # Clone Heqet-Code & add current directory as userdata submodule
 function setup {
-  mkdir -fp "$HEQET_DATADIR"
+  mkdir -p "$HEQET_DATADIR"
 
   if [ ! -d ${HEQET_TMPDIR} ] ; then
 		git clone -b ${HEQET_REVISION} ${HEQET_REPO} ${HEQET_TMPDIR}
