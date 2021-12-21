@@ -25,6 +25,7 @@ if [ -f Heqetfile ] ; then
   . Heqetfile
 else
   echo "Error: Couldn't find Heqetfile in current working directory."
+  usage
   exit 1
 fi
 
