@@ -36,10 +36,13 @@ HEQET_VALUES="${heqet_values:-values.yaml}"
 USERDATA_REPO=$(pwd)
 #USERDATA_REVISION=
 
-HEQET_TMPDIR="${HEQET_TMPDIR:-${HELM_DATA_HOME}/heqet}"
+HEQET_DATADIR="${HEQET_DATADIR:-${HELM_DATA_HOME}/heqet}"
+HEQET_TMPDIR="${HEQET_TMPDIR:-${HEQET_DATADIR}/$(basename $PWD)}"
 
 # Clone Heqet-Code & add current directory as userdata submodule
 function setup {
+  mkdir -fp "$HEQET_DATADIR"
+
   if [ ! -d ${HEQET_TMPDIR} ] ; then
 		git clone -b ${HEQET_REVISION} ${HEQET_REPO} ${HEQET_TMPDIR}
 		ln -s ${USERDATA_REPO} ${HEQET_TMPDIR}/${HEQET_PATH}/userdata
