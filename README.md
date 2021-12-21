@@ -1,6 +1,6 @@
-# helm-heqet
+# Heqet Helm Plugin
 
-A helm3 plugin for templating heqet configuration into kubernetes resources. It can also be used to validate your configuration.
+A helm plugin for templating heqet configuration into kubernetes resources. It can also be used to e.g. validate your configuration or for CI/CD.
 This plugin is part of [Heqet](https://github.com/lib42/heqet).
 
 ## Installation
@@ -26,3 +26,7 @@ Important: All commands must be executed inside your heqet project, with a `Heqe
 > helm heqet setup
 > helm heqet template
 ```
+
+## Container Image
+
+Additionally there is a container image containing the plugin: `lib42/heqet-cli`
